@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  </head>
+  <body>
+<div class="myClass">
+    <h1><img src="../../assets/Back.svg" (click)="Back()">&nbsp;&nbsp;<b>{{genre}}</b></h1>
+
+   <!-- <input [value]='' (change)="change($event)"> -->
+   <div class="outer">
+    <div class="matClass" *ngFor="let book of mydata" style="text-align:center">
+    
+    
+        <div class="matDiv">
+        <img id="myImg" src="{{book.formats['image/jpeg']}}"><br>
+        <a href="{{book.formats['text/plain; charset=utf-8']}}">
+    <span id='mySpan'>&nbsp;{{book.title}}&nbsp;</span></a>
+    <span id='mySpan'> <h6>{{book.authors[0].name}}</h6></span>
+        </div>
+    
+    </div>
+   </div>
+</div>
+</body>
+</html>
