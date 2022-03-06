@@ -8,11 +8,13 @@
     <h1><img src="../../assets/Back.svg" (click)="Back()">&nbsp;&nbsp;<b>{{genre}}</b></h1>
 
    <!-- <input [value]='' (change)="change($event)"> -->
+   <input type="text" (change)="valueChange($event)">&nbsp;&nbsp;<button (click)="search()">Search</button>
    <div class="outer">
+     
     <div class="matClass" *ngFor="let book of mydata" style="text-align:center">
     
     
-        <div class="matDiv">
+        <div class="matDiv" *ngIf="book.authors[0].name!==''">
         <img id="myImg" src="{{book.formats['image/jpeg']}}"><br>
         <a href="{{book.formats['text/plain; charset=utf-8']}}">
     <span id='mySpan'>&nbsp;{{book.title}}&nbsp;</span></a>
